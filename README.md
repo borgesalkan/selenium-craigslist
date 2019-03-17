@@ -29,8 +29,8 @@ Follow the next steps to help you get the project setup:
 Clone this project onto your system, and navigate in to the project folder.
 
 ```
-git clone project
-cd project_folder_name
+git clone git@github.com:borgesalkan/selenium-craigslist.git
+cd selenium-craigslist
 ```
 
 Optional step to setup virtualenv. If you don't have it, then you may either follow this page to get it installed,
@@ -53,7 +53,7 @@ Install all the requirements. There aren't many actually.
 pip install -r requirements.txt
 ```
 
-The **main.py** is the entry point. So, let's try running that. You may change the call as you like in this file.
+The `main.py` is the entry point. So, let's try running that. You may change the call as you like in this file.
 If any variables are not set, then feel free to set them as you would like. If not, then you should get an appropriate
 exception mentioning what is missing.
 
@@ -67,14 +67,14 @@ automatically taken to the Craigslist's postings manage page and manage posts as
 ## Customize Implementation
 
 Not sure if you noticed. If your main works fine, the code just navigates through the pages, and doesn't really perform
-any actions. That is because the **main.py** is just a sample dry run of sorts. To get the code working you would have to
+any actions. That is because the `main.py` is just a sample dry run of sorts. To get the code working you would have to
 make some code changes.
 
-The beef of this script is in **craigslist_manage_posting.py**. If you really want the script to click some buttons on
-the postings page, then pass if **dry_run=False** when calling **manage_posts(action, dry_run)**.
+The beef of this script is in `craigslist_manage_posting.py`. If you really want the script to click some buttons on
+the postings page, then pass if `dry_run=False` when calling `manage_posts(action, dry_run)`.
 
 When a button is clicked, usually this navigates to a different page. So, if you want to add more functionality, then best
-way is to create a new class and inherit **CraigslistPostManager**, and then override the **perform_action(button, dry_run)**.
+way is to create a new class and inherit `CraigslistPostManager`, and then override the `perform_action(button, dry_run)`.
 
 ```
 class MyCustomCraigslistPostManager(CraigslistPostManager):
